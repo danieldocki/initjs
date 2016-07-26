@@ -102,5 +102,4 @@ jQuery ->
 
 # Support Turbolinks 5
 $(document).bind 'turbolinks:load', ->
-  console.log('Turbolinks load...')
   Initjs.initialize()
