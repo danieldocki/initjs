@@ -90,16 +90,16 @@ jQuery ->
   Initjs.initApp()
 
   if window.Turbolinks? and Initjs.config('turbolinks') is true
-    document.addEventListener 'page:change', () ->
+    $(document).bind 'page:change', ->
       Initjs.initialize()
 
     # Support Turbolinks 5
-    document.addEventListener 'turbolinks:load', () ->
+    $(document).bind 'turbolinks:load', ->
       Initjs.initialize()
 
     if navigator.userAgent.match(/MSIE 8.0/)
       Initjs.initialize()
 
   if $.fn.pjax? and Initjs.config('pjax') is true
-    document.addEventListener 'pjax:complete', () ->
+    $(document).bind 'pjax:complete', ->
       Initjs.initialize()
